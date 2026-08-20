@@ -1,7 +1,7 @@
+import { WelcomeClient } from "@/pages/welcome/WelcomeClient";
+
 export default function Home() {
   return (
-    <>
-    <h1>nazem</h1>
-    </>
+    <WelcomeClient/>
   );
 }
