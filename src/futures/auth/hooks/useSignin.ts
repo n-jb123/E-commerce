@@ -34,8 +34,7 @@ export const useSignin = () => {
       setLoading(false);
       return;
     }else{
-        data.user.user_metadata.role==='admin'?
-        router.push('dashboard/home'):router.push('/ecommerce/home')
+        router.push('/ecommerce/home')
         setLoading(false)
     }
   };

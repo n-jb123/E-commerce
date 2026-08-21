@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-// import { cartProduct, product } from "@/ecommerce/cart/types/typesCart";
+import { cartProduct, product } from "@/futures/ecommerce/cart/types/typesCart";
 
 export type ButtonType = {
   children: ReactNode;
@@ -22,13 +22,13 @@ export type cardType = {
   height?: string | { xs: string; md: string };
   width?: string | { xs: string; md: string };
 };
-// interim
+
 export type CardItemType = {
-  product: any
+  product: product
   addToCart: (product: any) => void;
   router: AppRouterInstance;
   toggleFavorite: (product: any) => void;
-  productsFavorite: any[];
+  productsFavorite: product[];
 };
 
 export type dividerType = {
@@ -45,7 +45,7 @@ export type QTYType = {
   id: number;
   decreaseQty: (id: number) => void;
   increaseQty: (id: number) => void;
-  productsCart: any[];
+  productsCart: cartProduct[];
 };
 
 export type ratingType = {
@@ -60,12 +60,12 @@ export type ratingType = {
 };
 
 export type swiperType = {
-  products?: any[];
+  products?: product[];
   category: string;
   router: AppRouterInstance;
   addToCart: (product: any) => void;
   toggleFavorite: (product: any) => void;
-  productsFavorite: any[];
+  productsFavorite: product[];
 };
 
 export type SwitchModeType = {

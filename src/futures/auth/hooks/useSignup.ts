@@ -63,7 +63,7 @@ export const useSignup = () => {
     }
    
     setLoading(false);
-    router.push("/signin");
+    router.push("/auth/signin");
   };
   const handleOnSubmit = handleSubmit(onSubmit);
   return { register, errors, errorMessage, handleOnSubmit, loading };

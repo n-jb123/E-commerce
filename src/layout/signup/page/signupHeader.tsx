@@ -18,7 +18,7 @@ export const SignupHeader = ({ handleToggleTheme, Mode }: signHeaderType) => (
       <Logo />
     </Link>
     <Box sx={{ display: "flex", gap: "16px", alignItems: "center" }}>
-      <Link href={"/signin"}>
+      <Link href={"/auth/signin"}>
         <Typography sx={{ color: "text.secondary" }}>signin</Typography>
       </Link>
       <SwitchMode handleToggleTheme={handleToggleTheme} Mode={Mode} />

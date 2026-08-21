@@ -20,7 +20,7 @@ export const SigninHeader = ({ handleToggleTheme, Mode }: signHeaderType) => (
     </Link>
 
     <Box sx={{ display: "flex", gap: "16px", alignItems: "center" }}>
-      <Link href={"/signup"}>
+      <Link href={"/auth/signup"}>
         <Typography sx={{ color: "text.secondary" }}>Create Account</Typography>
       </Link>
 
