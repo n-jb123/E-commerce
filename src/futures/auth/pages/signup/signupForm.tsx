@@ -35,10 +35,10 @@ export const SignupForm = ({
             color: "text.secondary",
           }}
         >
-          Welcome Back
+          Welcome 
         </Typography>
         <Typography sx={{ color: "text.inverseOnSurface" }}>
-          Sign in to your private gallery.
+          Register now for your own exhibition.
         </Typography>
       </Box>
       <form
@@ -51,6 +51,15 @@ export const SignupForm = ({
         }}
       >
         <Stack direction={"column"} spacing={2}>
+          <TextField
+              id="phone"
+              label="phone"
+              error={!!errors.phone}
+              helperText={errors.phone?.message}
+              {...register("phone")}
+              variant="standard"
+              sx={{ width: "100%" }}
+            />
           <Box sx={{ width: "100%", display: "flex", gap: 2 }}>
             <TextField
               id="firstName"

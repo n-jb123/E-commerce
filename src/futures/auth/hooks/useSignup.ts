@@ -4,7 +4,14 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-const signupShema = yup.object({
+const signupShame = yup.object({
+ phone: yup
+  .string()
+  .required('Phone number is required')
+  .matches(
+    /^\+[1-9]\d{1,14}$/,
+    'Phone number must be in international format (e.g. +201012345678)'
+  ),
   firstName: yup.string().required("firstName is required"),
   lastName: yup.string().required("lastName is required"),
   email: yup
@@ -17,6 +24,7 @@ const signupShema = yup.object({
     .required("Password is required"),
 });
 export const useSignup = () => {
+  
   const supabase = createClient();
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -26,23 +34,24 @@ export const useSignup = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(signupShema) });
+  } = useForm({ resolver: yupResolver(signupShame) });
   const onSubmit = async (formData: {
     firstName: string;
     lastName: string;
     email: string;
     password: string;
+    phone:string
   }) => {
     setLoading(true);
-    const { firstName, lastName, email, password } = formData;
+    const {phone, firstName, lastName, email, password } = formData;
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
-          role: "user",
           firstName: firstName,
           lastName: lastName,
+          phone:phone
         },
       },
     });
@@ -52,13 +61,7 @@ export const useSignup = () => {
       setLoading(false);
       return;
     }
-    await supabase
-      .from("profiles")
-      .insert({
-        id: data?.user.id,
-        user_name: firstName + " " + lastName,
-        role: "user",
-      });
+   
     setLoading(false);
     router.push("/signin");
   };

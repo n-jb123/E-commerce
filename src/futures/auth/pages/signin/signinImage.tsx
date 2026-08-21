@@ -1,7 +1,6 @@
-
 import { Layer } from "@/component/layer/layer";
 import { Box, Typography } from "@mui/material";
-export const SignupImage = () => (
+export const SigninImage = () => (
   <Box
     sx={{
       width: { xs: "100%", md: "50%" },
@@ -29,15 +28,10 @@ export const SignupImage = () => (
       >
         The Essence of Night
       </Typography>
-      <Typography
-        sx={{
-          fontSize: "24px",
-          color: "text.primary",
-        }}
-      >
+      <Typography sx={{ fontSize: "24px", color: "text.primary" }}>
         Unlock a world of curated, high-end olfactory experiences.
       </Typography>
     </Box>
-    <Layer/>
+    <Layer />
   </Box>
 );

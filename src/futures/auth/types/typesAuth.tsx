@@ -29,6 +29,7 @@ export type signupType = {
   lastName: string;
   email: string;
   password: string;
+  phone:string
 };
 export type SigninFormType = {
   register: UseFormRegister<{
@@ -58,6 +59,7 @@ export type SignupFormType = {
     lastName: string;
     email: string;
     password: string;
+    phone:string
   }>;
   handleOnSubmit:  (e?: BaseSyntheticEvent<object, any, any> | undefined) => Promise<void | undefined>
   errors: FieldErrors<{
@@ -65,6 +67,7 @@ export type SignupFormType = {
     lastName: string;
     email: string;
     password: string;
+    phone:string
   }>;
   errorMessage: string | null;
   loading: boolean;
