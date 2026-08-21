@@ -1,7 +1,5 @@
-import { WelcomeClient } from "@/pages/welcome/WelcomeClient";
+import { WelcomeClient } from "@/futures/welcome/WelcomeClient";
 
 export default function Home() {
-  return (
-    <WelcomeClient/>
-  );
+  return <WelcomeClient />;
 }
