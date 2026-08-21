@@ -1,5 +1,5 @@
-import { product } from "@/ecommerce/cart/types/typesCart";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { product } from "../../cart/types/typesCart";
 
 export type homeSwiperType = {
   products: product[] | undefined;

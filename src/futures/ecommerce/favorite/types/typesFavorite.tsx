@@ -1,4 +1,4 @@
-import { product } from "@/ecommerce/cart/types/typesCart";
+import { product } from "../../cart/types/typesCart";
 
 export type FavoriteDrawerType = {
   productsFavorite: product[];
