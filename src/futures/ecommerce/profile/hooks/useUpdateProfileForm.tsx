@@ -47,51 +47,6 @@ export const useUpdateUserName = () => {
   };
 };
 
-// ==================== Phone Number ====================
-const phoneNumberShame = yup.object({
-  phoneNumber: yup
-    .string()
-    .matches(
-      /^\+[1-9]\d{1,14}$/,
-      "Phone number must be in international format (e.g. +201012345678)"
-    )
-    .notRequired(),
-});
-export type PhoneNumberInput = yup.Asserts<typeof phoneNumberShame>;
-export type PhoneNumberOutput = yup.InferType<typeof phoneNumberShame>;
-
-export const useUpdatePhoneNumber = () => {
-  const { user } = useProfileClient();
-  const phoneNumber = useForm<PhoneNumberInput, any, PhoneNumberOutput>({
-    resolver: yupResolver(phoneNumberShame),
-    defaultValues: {
-      phoneNumber: user?.phone ?? "",
-    },
-    mode: "onChange",
-  });
-
-  const onSubmit = async () => {
-    const { data, error } = await supabase.auth.updateUser({
-      data:{
-        phone: phoneNumber
-      }
-      
-    });
-
-    if (error) {
-      console.error(error.message);
-      return;
-    }
-    console.log(data.user);
-  };
-
-  const handleOnSubmit = phoneNumber.handleSubmit(onSubmit);
-  return {
-    phoneNumber,
-    handleOnSubmitPhoneNumber: handleOnSubmit,
-  };
-};
-
 // ==================== Email ====================
 const emailShame = yup.object({
   email: yup.string().email("Invalid email").required("Email is required"),

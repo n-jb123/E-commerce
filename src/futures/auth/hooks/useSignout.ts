@@ -15,7 +15,7 @@ const router=useRouter()
     setLoading(false)
     return;
    }
-   router.push('/signin')
+   router.push('/auth/signin')
     setLoading(false)
   }
   return({errorMessage,loading,HandleOnSignout})

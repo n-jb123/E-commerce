@@ -39,21 +39,6 @@ export type ProfileInformationType = {
   handleOpenDialogUserName: () => void;
   handleCloseDialogUserName: () => void;
   user: any;
-  phoneNumber: UseFormReturn<
-    {
-      phoneNumber?: string | undefined | null;
-    },
-    any,
-    {
-      phoneNumber?: string | undefined | null;
-    }
-  >;
-  handleOnSubmitPhoneNumber: (
-    e?: BaseSyntheticEvent<object, any, any> | undefined,
-  ) => Promise<void>;
-  openDialogPhoneNumber: boolean;
-  handleOpenDialogPhoneNumber: () => void;
-  handleCloseDialogPhoneNumber: () => void;
   CreateAt: string;
   router: AppRouterInstance;
   logout: () => void;
@@ -89,11 +74,11 @@ export type UpdatePhoneNumberPage = {
   ) => Promise<void>;
   phoneNumber: UseFormReturn<
     {
-      phoneNumber?: string | undefined | null;
+      phoneNumber?: string | undefined;
     },
     any,
     {
-      phoneNumber?: string | undefined | null;
+      phoneNumber?: string | undefined ;
     }
   >;
 };

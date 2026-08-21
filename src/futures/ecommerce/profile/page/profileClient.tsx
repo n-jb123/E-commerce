@@ -3,7 +3,7 @@ import { Box, Stack } from "@mui/material";
 
 import {
   useUpdateImage,
-  useUpdatePhoneNumber,
+
   useUpdateUserName,
 } from "../hooks/useUpdateProfileForm";
 import { useUpdateProfile } from "../hooks/useUpdateProfile";
@@ -18,7 +18,7 @@ import { EcommerceLayout } from "@/layout/ecommerce/page/ecommerceLayout";
 export const ProfileClient = () => {
   const router = useRouter();
   const { userName, handleOnSubmitUserName } = useUpdateUserName();
-  const { phoneNumber, handleOnSubmitPhoneNumber } = useUpdatePhoneNumber();
+
   const { image, handleOnSubmitImage } = useUpdateImage();
   const {
     openDialogUserName,
@@ -62,11 +62,6 @@ export const ProfileClient = () => {
               handleOpenDialogUserName={handleOpenDialogUserName}
               handleCloseDialogUserName={handleCloseDialogUserName}
               user={user}
-              phoneNumber={phoneNumber}
-              handleOnSubmitPhoneNumber={handleOnSubmitPhoneNumber}
-              openDialogPhoneNumber={openDialogPhoneNumber}
-              handleOpenDialogPhoneNumber={handleOpenDialogPhoneNumber}
-              handleCloseDialogPhoneNumber={handleCloseDialogPhoneNumber}
               CreateAt={CreateAt}
               router={router}
               logout={HandleOnSignout}
